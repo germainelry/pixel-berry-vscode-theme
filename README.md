@@ -3,7 +3,7 @@
 A cozy dark VS Code theme with warm berry tones — wine/burgundy backgrounds, raspberry accents, and rose-pink syntax.
 
 <p align="center">
-  <img src="images/pixel-berry-logo.png" alt="Pixel Berry" width="480">
+  <img src="images/pixel-berry-logo.png" alt="Pixel Berry">
 </p>
 
 ## Overview
