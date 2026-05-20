@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pixel Berry — HTML fixture</title>
+  <link rel="stylesheet" href="./06-css.css" />
+  <style>
+    body { background: #2a2230; color: #e8dfe8; }
+    .badge { color: var(--color-primary); }
+  </style>
+</head>
+<body>
+  <!-- header region -->
+  <header id="top" class="site-header" data-theme="pixel-berry">
+    <h1>Pixel Berry &mdash; HTML Fixture</h1>
+    <nav aria-label="primary">
+      <ul>
+        <li><a href="#a">Home</a></li>
+        <li><a href="#b" rel="noopener">About</a></li>
+        <li><a href="mailto:user@example.com">Contact &amp; help</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>An article heading</h2>
+      <p>
+        Some prose with <strong>bold</strong>, <em>italic</em>, and
+        <code>inline&nbsp;code</code>. Also an entity: &copy; 2026.
+      </p>
+      <form action="/submit" method="POST" enctype="multipart/form-data">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required placeholder="alice" />
+        <input type="checkbox" id="agree" name="agree" checked />
+        <button type="submit" disabled>Send</button>
+      </form>
+    </article>
+
+    <section class="badge">
+      <img src="./icon.svg" alt="badge" width="32" height="32" />
+      <span>Status: <output for="name">idle</output></span>
+    </section>
+  </main>
+
+  <script type="module">
+    import { Store } from './02-javascript.js';
+    const s = new Store('demo');
+    console.log('html fixture loaded', s);
+  </script>
+</body>
+</html>

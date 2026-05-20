@@ -1,0 +1,46 @@
+{
+  "name": "pixel-berry",
+  "displayName": "Pixel Berry",
+  "description": "A cozy dark VS Code theme with deep berry tones.",
+  "version": "0.0.1",
+  "publisher": "germainelry",
+  "license": "MIT",
+  "icon": "images/pixel-berry-logo.png",
+  "galleryBanner": {
+    "color": "#2a2230",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark theme",
+    "cozy theme",
+    "pink theme",
+    "purple theme",
+    "warm theme",
+    "pink",
+    "purple",
+    "berry"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Pixel Berry",
+        "uiTheme": "vs-dark",
+        "path": "./themes/pixel-berry-color-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/germainelry/pixel-berry-vscode-theme.git"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.15.0"
+  }
+}

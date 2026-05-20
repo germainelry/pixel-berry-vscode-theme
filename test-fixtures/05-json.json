@@ -1,0 +1,48 @@
+{
+  "name": "pixel-berry-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sample JSON exercising keys, strings, numbers, booleans, null, arrays, nested objects.",
+  "main": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "vitest run",
+    "lint": "eslint --max-warnings=0 ."
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0",
+    "@types/node": "^22.0.0"
+  },
+  "config": {
+    "retries": 3,
+    "timeout": 30000,
+    "backoffMs": 1.5,
+    "verbose": false,
+    "experimental": null,
+    "endpoints": [
+      "https://api.example.com/v1",
+      "https://api.example.com/v2"
+    ]
+  },
+  "metadata": {
+    "tags": ["theme", "fixture", "syntax"],
+    "owners": [
+      { "name": "alice", "role": "maintainer", "active": true },
+      { "name": "bob",   "role": "reviewer",   "active": false }
+    ],
+    "ratings": {
+      "design": 4.5,
+      "performance": 5,
+      "accessibility": null
+    }
+  }
+}

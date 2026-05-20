@@ -1,0 +1,74 @@
+/* 06-css.css — selectors, at-rules, vars, units, colors, pseudo-classes. */
+
+@charset "UTF-8";
+@import url("./reset.css");
+
+:root {
+  --color-primary: #ff6b9d;
+  --color-accent:  rgb(155, 212, 185);
+  --color-bg:      hsl(290 30% 18% / 1);
+  --space-md: 1rem;
+  --radius:   8px;
+  --duration: 200ms;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: white;
+}
+
+#app > .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: 2rem 1.25rem;
+  max-width: 64em;
+}
+
+.btn,
+.btn--primary,
+button[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  transition: transform var(--duration) ease, background-color var(--duration);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+  background-color: var(--color-primary);
+}
+
+.btn::before {
+  content: "→ ";
+  color: hotpink;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}
+
+@media (min-width: 720px) {
+  .container { padding-inline: 4vw; }
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1);   opacity: 1; }
+  50%  { transform: scale(1.05); opacity: 0.7; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+.notice { animation: pulse 2s ease-in-out infinite; }

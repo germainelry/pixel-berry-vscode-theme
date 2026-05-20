@@ -1,0 +1,54 @@
+# 08-yaml.yaml — keys, scalars, lists, anchors, multi-doc.
+---
+name: pixel-berry
+version: 1.0.0
+private: true
+maintainers:
+  - name: alice
+    role: lead
+    active: true
+  - name: bob
+    role: reviewer
+    active: false
+
+defaults: &defaults
+  retries: 3
+  timeout: 30000
+  verbose: false
+
+environments:
+  development:
+    <<: *defaults
+    debug: true
+    endpoint: "https://dev.example.com"
+  production:
+    <<: *defaults
+    debug: false
+    endpoint: "https://api.example.com"
+
+description: |
+  Multi-line block scalar (literal).
+  Newlines are preserved exactly.
+    Indented lines too.
+
+summary: >
+  Multi-line folded scalar.
+  Newlines become spaces, so this
+  is one long line in the final value.
+
+tags: [theme, fixture, syntax]
+empty: null
+also_empty: ~
+unset:
+
+numbers:
+  decimal: 42
+  float: 3.14159
+  exponent: 1.5e-3
+  hex: 0xFF
+  octal: 0o755
+  negative: -17
+
+---
+# second document
+greeting: "hello, world"
