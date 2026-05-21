@@ -1,8 +1,8 @@
 {
   "name": "pixel-berry",
   "displayName": "Pixel Berry",
-  "description": "A cozy dark VS Code theme with deep berry tones.",
-  "version": "0.0.2",
+  "description": "A cozy dark theme with warm berry tones — wine backgrounds, raspberry accents, and rose-pink syntax. Designed for long coding sessions.",
+  "version": "0.0.3",
   "publisher": "germainelry",
   "license": "MIT",
   "icon": "images/pixel-berry-logo.png",
@@ -18,14 +18,35 @@
   ],
   "keywords": [
     "theme",
-    "dark theme",
-    "cozy theme",
-    "pink theme",
-    "purple theme",
-    "warm theme",
+    "color-theme",
+    "dark-theme",
+    "dark",
+    "cozy",
     "pink",
     "purple",
-    "berry"
+    "warm",
+    "berry",
+    "burgundy",
+    "wine",
+    "raspberry",
+    "rose",
+    "lavender",
+    "plum",
+    "magenta",
+    "soft",
+    "aesthetic",
+    "low-contrast",
+    "eye-friendly",
+    "readable",
+    "night-coding",
+    "long-coding",
+    "syntax-highlighting",
+    "editor-theme",
+    "developer-theme",
+    "code-theme",
+    "vscode-theme",
+    "vscodium",
+    "open-vsx"
   ],
   "contributes": {
     "themes": [
@@ -36,11 +57,17 @@
       }
     ]
   },
+  "scripts": {
+    "package": "vsce package",
+    "publish:vscode": "vsce publish",
+    "publish:openvsx": "ovsx publish"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/germainelry/pixel-berry-vscode-theme.git"
   },
   "devDependencies": {
-    "@vscode/vsce": "^2.15.0"
+    "@vscode/vsce": "^2.15.0",
+    "ovsx": "^0.10.0"
   }
 }

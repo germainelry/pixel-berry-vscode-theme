@@ -2,6 +2,24 @@
 
 All notable changes to the Pixel Berry theme will be documented in this file.
 
+## [0.0.3] - 2026-05-21
+
+### Added
+- Open VSX Registry publishing support (`ovsx` CLI, npm scripts).
+- `PUBLISHING.md` — step-by-step dual-marketplace publishing guide.
+- Expanded marketplace keywords from 9 to 30 for better discoverability.
+
+### Changed
+- README updated with Open VSX badge, multi-editor installation instructions, and manual VSIX install section.
+- `.vscodeignore` updated to exclude publishing docs and build artifacts.
+
+## [0.0.2] - 2026-05-21
+
+### Changed
+- README updated with marketplace badges and improved descriptions.
+- Logo image optimized for marketplace display.
+- Pre-publish cleanup and asset optimization.
+
 ## [0.0.1] - 2026-05-21
 
 ### Added

@@ -1,9 +1,10 @@
 # Pixel Berry
 
 [![VS Marketplace](https://img.shields.io/badge/VS%20Marketplace-Pixel%20Berry-c44560?logo=visual-studio-code&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=germainelry.pixel-berry)
+[![Open VSX](https://img.shields.io/badge/Open%20VSX-Pixel%20Berry-c44560?logo=eclipse-ide&logoColor=white)](https://open-vsx.org/extension/germainelry/pixel-berry)
 [![License: MIT](https://img.shields.io/badge/License-MIT-b88898.svg)](LICENSE)
 
-A cozy dark VS Code theme with warm berry tones — wine/burgundy backgrounds, raspberry accents, and rose-pink syntax. Designed for long coding sessions.
+A cozy dark theme with warm berry tones — wine/burgundy backgrounds, raspberry accents, and rose-pink syntax. Designed for long coding sessions. Compatible with VS Code, Cursor, VSCodium, Windsurf, and other editors that support VS Code extensions.
 
 <p align="center">
   <img src="images/pixel-berry-logo.png" alt="Pixel Berry">
@@ -23,14 +24,30 @@ A dark theme with warm wine/burgundy surfaces layered into a quiet gradient — 
 
 ## Installation
 
-1. Open **Extensions** in VS Code (`Ctrl+Shift+X`)
+### VS Code
+
+1. Open **Extensions** (`Ctrl+Shift+X`)
 2. Search for **Pixel Berry**
-3. Click **Install** and select it from the theme picker (`Ctrl+K Ctrl+T`)
+3. Click **Install**, then select it from the theme picker (`Ctrl+K Ctrl+T`)
+
+### Open VSX (VSCodium, Windsurf, and other compatible editors)
+
+1. Open **Extensions** in your editor
+2. Search for **Pixel Berry** on the [Open VSX Registry](https://open-vsx.org/extension/germainelry/pixel-berry)
+3. Click **Install**, then select it from the theme picker
+
+### Manual Install (.vsix)
+
+1. Download the latest `.vsix` from [GitHub Releases](https://github.com/germainelry/pixel-berry-vscode-theme/releases)
+2. In your editor: **Extensions** > `...` menu > **Install from VSIX...**
+3. Or from the command line:
+   ```bash
+   code --install-extension pixel-berry-0.0.3.vsix
+   ```
 
 ## Contributing
 
-1. Open this repo in VS Code and press **F5** to launch the Extension Development Host.
-2. Edit `themes/pixel-berry-color-theme.json` — changes hot-reload.
+Contributions are welcome! See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup instructions, design constraints, and how to submit a pull request.
 
 ## License
 

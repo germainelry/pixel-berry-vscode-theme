@@ -1,7 +1,16 @@
 .vscode/**
 .vscode-test/**
 .gitignore
+.gitattributes
 vsc-extension-quickstart.md
 test-fixtures/**
 docs/**
 CLAUDE.md
+CONTRIBUTING.md
+*.vsix
+package-lock.json
+.env
+.env.*
+*.stackdump
+.playwright-mcp/**
+node_modules/**
