@@ -7,7 +7,7 @@
 A cozy dark theme with warm berry tones — wine/burgundy backgrounds, raspberry accents, and rose-pink syntax. Designed for long coding sessions. Compatible with VS Code, Cursor, VSCodium, Windsurf, and other editors that support VS Code extensions.
 
 <p align="center">
-  <img src="images/pixel-berry-logo.png" alt="Pixel Berry">
+  <img src="images/pixel-berry-banner.png" alt="Pixel Berry — A warm dark theme for VS Code">
 </p>
 
 ## Overview
