@@ -2,6 +2,15 @@
 
 All notable changes to the Pixel Berry theme will be documented in this file.
 
+## [0.0.4] - 2026-05-22
+
+### Added
+- New banner image (`pixel-berry-banner.png`) for README hero section.
+
+### Changed
+- README updated to use the new banner image instead of the logo.
+- Refreshed editor, languages, and UI preview screenshots.
+
 ## [0.0.3] - 2026-05-21
 
 ### Added
