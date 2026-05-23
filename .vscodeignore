@@ -4,7 +4,9 @@
 .gitattributes
 vsc-extension-quickstart.md
 test-fixtures/**
+video/**
 docs/**
+
 CLAUDE.md
 CONTRIBUTING.md
 *.vsix
