@@ -2,6 +2,17 @@
 
 All notable changes to the Pixel Berry theme will be documented in this file.
 
+## [0.1.1] - 2026-06-04
+
+Maintenance release — no palette or token changes. The syntax/UI colours are
+identical to 0.1.0.
+
+### Changed
+- Refreshed the README preview screenshots (`pixel-berry-banner.png`,
+  `pixel-berry-editor.png`, `pixel-berry-languages.png`, `pixel-berry-ui.png`)
+  to reflect the 0.1.0 syntax palette.
+- README manual-install command updated to reference `pixel-berry-0.1.1.vsix`.
+
 ## [0.1.0] - 2026-06-03
 
 Syntax foreground palette redesign — improves semantic separation across all
