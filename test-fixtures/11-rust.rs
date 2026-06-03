@@ -22,6 +22,7 @@ impl Display for Status {
     }
 }
 
+/// A borrow-scoped, in-memory key/value cache keyed by `u32`.
 pub struct Repo<'a, T: Clone> {
     name: &'a str,
     cache: HashMap<u32, T>,
@@ -58,6 +59,7 @@ fn first_word(s: &str) -> &str {
 
 #[allow(clippy::needless_return)]
 fn process(values: &[i32]) -> Vec<i32> {
+    /* keep positives, double them, cap at ten results */
     values
         .iter()
         .filter(|&&x| x > 0)

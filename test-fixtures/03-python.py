@@ -1,19 +1,28 @@
 """03-python.py — decorators, dataclasses, type hints, f-strings, magic vars."""
 
 from __future__ import annotations
+
 import json
 import os
 from dataclasses import dataclass, field
-from typing import Optional, Iterable
+from enum import Enum
+from typing import Iterable, Optional
 
 CACHE_DIR: str = os.path.join(os.getcwd(), ".cache")
 MAX_RETRIES = 3
+
+
+class Status(Enum):
+    ACTIVE = "active"
+    IDLE = "idle"
+    DONE = "done"
 
 
 @dataclass(frozen=True)
 class User:
     id: int
     name: str
+    status: Status = Status.ACTIVE  # member ref → semantic enumMember (#b0a8ee)
     tags: list[str] = field(default_factory=list)
 
     def __post_init__(self) -> None:
@@ -21,7 +30,7 @@ class User:
             raise ValueError(f"bad id: {self.id!r}")
 
     def render(self) -> str:
-        return f"<User id={self.id} name={self.name!s} tags={len(self.tags):d}>"
+        return f"<User id={self.id} name={self.name!s} status={self.status.value} tags={len(self.tags):d}>"
 
 
 class Repo:
@@ -55,6 +64,7 @@ def main() -> None:
     blob = b"\x00\x01\xff"
     pi = 3.14159
     items = [1, 2, 3, 4, 5]
+    # double the even numbers, drop the rest
     total = sum(x * 2 for x in items if x % 2 == 0)
     print(f"raw={raw!r} blob_len={len(blob)} pi={pi:.2f} total={total}")
     repo = Repo.from_file("users.jsonl")
@@ -64,3 +74,16 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+# arithmetic + comparison + boolean chaining
+a, b, c = 7, 3, 10
+result = (a + b * 2 - c // 3) >= 5 and (a != b) or (c % 2 == 0)
+print(result)
+
+# assignment operators (augmented + walrus)
+count = 1
+count += 4
+count *= 2
+if (n := count - 3) > 0:
+    print(n)

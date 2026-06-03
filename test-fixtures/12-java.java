@@ -28,14 +28,18 @@ public final class UserRepository<T extends UserRepository.Entity> {
         String getName();
     }
 
+    public enum Status { ACTIVE, IDLE, DONE }
+
     public static class User implements Entity {
         private final int id;
         private final String name;
+        private final Status status;
         private final List<String> tags;
 
         public User(int id, String name, List<String> tags) {
             this.id = id;
             this.name = name;
+            this.status = Status.ACTIVE;
             this.tags = tags != null ? tags : new ArrayList<>();
         }
 
@@ -44,7 +48,7 @@ public final class UserRepository<T extends UserRepository.Entity> {
 
         @Override
         public String toString() {
-            return String.format("User{id=%d, name=%s, tags=%s}", id, name, tags);
+            return String.format("User{id=%d, name=%s, status=%s, tags=%s}", id, name, status, tags);
         }
     }
 

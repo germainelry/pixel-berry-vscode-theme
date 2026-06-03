@@ -2,7 +2,7 @@
 import React, { useState, useEffect, type FC } from 'react';
 import * as fs from 'node:fs/promises';
 
-/** Module-scope const → semantic `variable.constant` (lavender #b8a3e8). */
+/** Module-scope const → semantic `variable.constant` (periwinkle #b0a8ee). */
 const MAX_RETRIES = 3;
 const PI_APPROX = Math.PI;
 const HEX_MASK = 0xff_ff_ff;
@@ -10,7 +10,7 @@ const BIG = 9_007_199_254_740_993n;
 const RATE = 1.5e-3;
 
 export enum Status { Active = 'active', Idle = 'idle', Done = 'done' }
-//                   ^^^^^^   semantic `enumMember` → teal #9bd4b9
+//                   ^^^^^^   semantic `enumMember` → periwinkle #b0a8ee
 
 export type ID = string | number;
 export interface User<T = unknown> { id: ID; name: string; payload?: T; }

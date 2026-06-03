@@ -33,6 +33,13 @@ abstract class BaseRepository implements RepositoryContract
 
 final class UserRepository extends BaseRepository
 {
+    /**
+     * Load a user by id, reading through to the JSON cache on a miss.
+     *
+     * @param  int $id  Positive identifier.
+     * @return ?User    Null when the backing file is absent.
+     * @throws RuntimeException When $id is negative.
+     */
     public function load(int $id): ?User
     {
         if ($id < 0) {

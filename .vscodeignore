@@ -1,18 +1,11 @@
-.vscode/**
-.vscode-test/**
-.gitignore
-.gitattributes
-vsc-extension-quickstart.md
-test-fixtures/**
-video/**
-docs/**
+# Whitelist strategy: ignore EVERYTHING, then re-include only the shipped payload.
+# Any new dev artifact is excluded from the .vsix by default.
+**
 
-CLAUDE.md
-CONTRIBUTING.md
-*.vsix
-package-lock.json
-.env
-.env.*
-*.stackdump
-.playwright-mcp/**
-node_modules/**
+# --- shipped payload ---
+!package.json
+!README.md
+!CHANGELOG.md
+!LICENSE
+!images/
+!themes/pixel-berry-color-theme.json

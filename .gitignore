@@ -1,12 +1,35 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Build artifacts — publish to GitHub Releases, not the tree
 *.vsix
+*.stackdump
+
+# OS
 .DS_Store
-docs/**
-CLAUDE.md
+Thumbs.db
+
+# Secrets — no runtime, but defense-in-depth so one is never committed
 .env
 .env.*
-.playwright-mcp/console-2026-05-21T12-13-40-859Z.log
-.playwright-mcp/console-2026-05-21T12-15-14-158Z.log
-.playwright-mcp/page-2026-05-21T12-13-42-894Z.yml
-.playwright-mcp/page-2026-05-21T12-15-15-366Z.yml
-video/**
+
+# Python bytecode (from test-fixtures)
+__pycache__/
+*.pyc
+
+# Local-only large media (demo lives on Marketplace / Release assets)
+video/
+
+# Repo-local docs (PUBLISHING, proposals, etc.) — canon files are tracked
+docs/*
+!docs/DESIGN_STANDARDS.md
+!docs/PALETTE_INDEX.md
+CLAUDE.md
+scripts/
+
+# Local tooling & generated artifacts (not committed)
+.playwright-mcp/
+
+# Local scratch dirs
+.cursor/
+test-fixtures/versions/**/*

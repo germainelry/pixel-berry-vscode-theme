@@ -77,6 +77,10 @@ func (s *memStore[T]) Set(ctx context.Context, id int, v *T) error {
 	return nil
 }
 
+/*
+fanIn merges several receive-only channels into a single stream. It starts one
+goroutine per source and closes the output channel once every source drains.
+*/
 func fanIn(ctx context.Context, sources ...<-chan int) <-chan int {
 	out := make(chan int)
 	var wg sync.WaitGroup

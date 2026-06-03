@@ -34,14 +34,14 @@ Use **"Developer: Inspect Editor Tokens and Scopes"** from the Command Palette t
 
 - The single source of truth is [`themes/pixel-berry-color-theme.json`](./themes/pixel-berry-color-theme.json).
 - The JSON has no comments. Design rationale lives in [`docs/DESIGN_STANDARDS.md`](./docs/DESIGN_STANDARDS.md).
-- Pick colors from the existing nine syntax roles (see DESIGN_STANDARDS.md Section 8.7). Do not introduce new hex values without opening an issue first.
+- Pick colors from the existing syntax roles (catalogued in [`docs/PALETTE_INDEX.md`](./docs/PALETTE_INDEX.md)). Do not introduce new hex values without opening an issue first.
 - Changes hot-reload in the Extension Development Host.
 
 ### Style Rules
 
 These constraints are non-negotiable:
 
-- **Nine syntax colors only.** keyword, function, type, constant, string, operator, variable, punctuation, comment. Each has a defined hex value in DESIGN_STANDARDS.md Section 8.7. New hex values require prior discussion.
+- **Use the defined syntax roles only.** keyword, function, type, constant, number, string, regexp, link, variable, property, operator, punctuation, comment, plus error/deprecated/unimplemented states. Each has a defined hex value catalogued in [`docs/PALETTE_INDEX.md`](./docs/PALETTE_INDEX.md). New hex values require prior discussion.
 - **Surface gradient hierarchy.** Panel `#1b1318` < Sidebar `#221820` < Editor `#292026`. New surfaces must fit this order. All surfaces use warm wine/burgundy tinting (hue 330-345) — no neutral grays.
 - **No bold.** `fontStyle: "bold"` is never used. `italic` is reserved for comments, `this`/`self`/`super`, HTML/JSX attributes, and Python control flow.
 - **Alpha-blended selections.** Editor selections must use alpha channels, never opaque backgrounds.

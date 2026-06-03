@@ -1,0 +1,38 @@
+diff --git a/color-probe/sample.py b/color-probe/sample.py
+index 1111111..2222222 100644
+--- a/color-probe/sample.py
++++ b/color-probe/sample.py
+@@ -1,15 +1,15 @@
+-# DELETED PROBE: this entire removed line should use markup.deleted.diff (#e8c5d6)
+-REMOVED_VARIABLE = "EXPECT_HEX_#E8C5D6"
+-REMOVED_CONSTANT = 12345
+-REMOVED_CALL = compute_removed_value(REMOVED_VARIABLE, REMOVED_CONSTANT)
+-REMOVED_NOTE = "If this is not pink-dusty, deleted scope mapping is not active."
++# INSERTED PROBE: this line should use markup.inserted.diff
++ADDED_VARIABLE = "INSERTED_SCOPE_CHECK"
++ADDED_CONSTANT = 67890
++ADDED_CALL = compute_added_value(ADDED_VARIABLE, ADDED_CONSTANT)
++ADDED_NOTE = "Green-ish inserted scope should differ from deleted."
+ 
+ context_line = "This line is plain context and should not use deleted/inserted color."
+ 
+-# DELETED BLOCK START
+-old_name = "alpha"
+-old_count = 10
+-old_items = [1, 2, 3]
+-# DELETED BLOCK END
++# INSERTED BLOCK START
++new_name = "beta"
++new_count = 11
++new_items = [1, 2, 3, 4]
++# INSERTED BLOCK END
+ 
+@@ -22,7 +22,7 @@ def status_message(flag):
+-    return "REMOVED STATUS: visually confirm deleted.diff foreground"
++    return "ADDED STATUS: compare against deleted block above"
+ 
+@@ -35,6 +35,6 @@ def palette_probe():
+-    # DELETED FINAL MARKER: #e8c5d6 expected
+-    return "deleted-marker"
++    # INSERTED FINAL MARKER
++    return "inserted-marker"

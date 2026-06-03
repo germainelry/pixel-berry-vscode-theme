@@ -8,6 +8,12 @@ const { EventEmitter } = require('events');
 const CACHE_DIR = path.join(process.cwd(), '.cache');
 const MAX_SIZE = Math.pow(2, 20);
 
+/*
+ * Keys are restricted to lowercase slugs so they map cleanly onto cache
+ * filenames. Enforced on every write in Store#set below.
+ */
+const KEY_RE = /^[a-z][a-z0-9_-]*$/;
+
 class Store extends EventEmitter {
   #data = new Map();
 
@@ -26,6 +32,7 @@ class Store extends EventEmitter {
   get size() { return this.#data.size; }
 
   set(key, value) {
+    if (!KEY_RE.test(key)) throw new Error(`invalid key: ${key}`);
     if (this.#data.size >= MAX_SIZE) throw new Error('store full');
     this.#data.set(key, value);
     this.emit('change', { key, value });
