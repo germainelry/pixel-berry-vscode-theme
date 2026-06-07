@@ -2,7 +2,7 @@
   "name": "pixel-berry",
   "displayName": "Pixel Berry",
   "description": "A cozy dark theme with warm berry tones — wine backgrounds, raspberry accents, and rose-pink syntax. Designed for long coding sessions.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "germainelry",
   "license": "MIT",
   "icon": "images/pixel-berry-logo.png",
@@ -65,6 +65,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/germainelry/pixel-berry-vscode-theme.git"
+  },
+  "sponsor": {
+    "url": "https://ko-fi.com/germainelry"
   },
   "devDependencies": {
     "@vscode/vsce": "^2.15.0",

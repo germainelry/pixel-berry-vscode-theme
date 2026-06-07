@@ -2,6 +2,14 @@
 
 All notable changes to the Pixel Berry theme will be documented in this file.
 
+## [0.1.2] - 2026-06-07
+
+### Added
+- Ko-fi support link. Added the native `sponsor` field in `package.json`
+  (`https://ko-fi.com/germainelry`), which renders a **Sponsor** button on the
+  Marketplace page, plus a dedicated **Support** section in the README with a
+  "Buy me a coffee" button. No palette or token changes.
+
 ## [0.1.1] - 2026-06-04
 
 Maintenance release — no palette or token changes. The syntax/UI colours are
