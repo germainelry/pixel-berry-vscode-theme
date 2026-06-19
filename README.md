@@ -42,7 +42,7 @@ A dark theme with warm wine/burgundy surfaces layered into a quiet gradient — 
 2. In your editor: **Extensions** > `...` menu > **Install from VSIX...**
 3. Or from the command line:
    ```bash
-   code --install-extension pixel-berry-0.1.2.vsix
+   code --install-extension pixel-berry-0.1.3.vsix
    ```
 
 ## Contributing

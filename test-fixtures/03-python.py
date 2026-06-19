@@ -22,7 +22,7 @@ class Status(Enum):
 class User:
     id: int
     name: str
-    status: Status = Status.ACTIVE  # member ref → semantic enumMember (#b0a8ee)
+    status: Status = Status.ACTIVE  # member ref → semantic enumMember (#8fb0f2)
     tags: list[str] = field(default_factory=list)
 
     def __post_init__(self) -> None:

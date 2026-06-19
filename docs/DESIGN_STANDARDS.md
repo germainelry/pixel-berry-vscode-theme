@@ -1,6 +1,6 @@
 # Pixel Berry Design Standards
 
-Last updated: 2026-05-21 | Theme version: 0.0.1 | Variant: Dark (`vs-dark`)
+Last updated: 2026-06-19 | Theme version: 0.1.3 | Variant: Dark (`vs-dark`)
 
 ---
 
@@ -46,7 +46,7 @@ The warm raspberry accent (`#c44560`) is reserved for small, high-signal element
 
 ### 2.3 Warm-to-Cool Syntax Palette
 
-Syntax colors span from warm to cool: berry-pink keywords (`#ff7ba8`), rose functions/tags (`#ffb0cf`), butter-yellow numbers (`#e8c98a`), orchid-violet types (`#ddb0ec`), cornflower-blue constants (`#8fb0f2`), sage strings (`#a8d8a8`), teal links (`#86c0cc`). The warmest, most saturated colors are reserved for high-signal structure (keywords, functions). High-frequency identifiers (variables/parameters) take a **dusty rose-pink** (`#e8c5d6`) — a deliberate v0.1.0 reversion to the v0.0.4 identifier tone, kept muted and lower in saturation than the vivid function rose (`#ffb0cf`) so the two stay distinct in call vs. identifier position. Structural glue recedes furthest: operators (`#aeb0a8`) sit just above punctuation (`#978d94`), both below body text. The butter-yellow number tone is the one deliberately warm *value* note, providing relief that is not pink.
+Syntax colors span from warm to cool: berry-pink keywords (`#ff7ba8`), rose functions/tags (`#ffb0cf`), butter-yellow numbers (`#e8c98a`), orchid-violet types (`#ddb0ec`), grey-lilac namespaces (`#c0a6d8`), cornflower-blue constants (`#8fb0f2`), sage strings (`#a8d8a8`), teal links (`#86c0cc`). The warmest, most saturated colors are reserved for high-signal structure (keywords, functions). High-frequency identifiers (variables/parameters) take a **dusty rose-pink** (`#e8c5d6`) — a deliberate v0.1.0 reversion to the v0.0.4 identifier tone, kept muted and lower in saturation than the vivid function rose (`#ffb0cf`) so the two stay distinct in call vs. identifier position. Properties take a cooler **mauve-grey** (`#c9b9cb`, v0.1.3 — was `#d8c2d2`), pulled away from the variable rose so object keys and identifiers no longer blur together. The **namespace** role (`#c0a6d8`, new in v0.1.3) is split from the type orchid so module/package/namespace names read as a distinct, cooler lilac while classes/types-in-namespace stay `#ddb0ec`. Structural glue recedes furthest: operators (`#aeb0a8`) sit just above punctuation (`#978d94`), both below body text. The butter-yellow number tone is the one deliberately warm *value* note, providing relief that is not pink.
 
 ### 2.4 Semantic Distinctness Over Vibrancy
 
@@ -519,13 +519,14 @@ is intentional (glue and muted states are de-emphasised).
 | Keywords / booleans | `#ff7ba8` | 6.5:1 | Pass | Pass | Fail |
 | Functions / tags | `#ffb0cf` | 9.3:1 | Pass | Pass | Pass |
 | Types | `#ddb0ec` | 8.7:1 | Pass | Pass | Pass |
+| Namespaces | `#c0a6d8` | 7.3:1 | Pass | Pass | Pass |
 | Constants | `#8fb0f2` | 7.3:1 | Pass | Pass | Pass |
 | Numbers | `#e8c98a` | 9.9:1 | Pass | Pass | Pass |
 | Strings | `#a8d8a8` | 9.8:1 | Pass | Pass | Pass |
 | Regex literal | `#9ed0c4` | 9.2:1 | Pass | Pass | Pass |
 | Links | `#86c0cc` | 7.9:1 | Pass | Pass | Pass |
 | Variables | `#e8c5d6` | 10.1:1 | Pass | Pass | Pass |
-| Properties | `#d8c2d2` | 9.5:1 | Pass | Pass | Pass |
+| Properties | `#c9b9cb` | 8.5:1 | Pass | Pass | Pass |
 | Operators | `#aeb0a8` | 7.2:1 | Pass | Pass | Pass |
 | Punctuation | `#978d94` | 4.9:1 | Pass | Pass | Fail |
 | Comments | `#a8919e` | 5.4:1 | Pass | Pass | Fail |
@@ -578,7 +579,9 @@ Key risk pairs:
 
 - **Variables (`#e8c5d6`, dusty rose) vs. functions (`#ffb0cf`, rose):** Same hue family — the primary v0.1.0 pair to watch. Separated by saturation and luminance (10.1:1 vs. 9.3:1); functions are vivid and in call position, variables muted and in identifier position.
 - **Keywords (`#ff7ba8`) vs. strings (`#a8d8a8`):** Differ in both hue and luminance (6.5:1 vs. 9.8:1). Remain separable under red-green CVD.
-- **Types (`#ddb0ec`, orchid) vs. properties (`#d8c2d2`, lilac):** Both lean violet; differ in saturation and lightness (8.7:1 vs. 9.5:1). Constants moved to cornflower (`#8fb0f2`) in v0.1.0, so the former type/constant violet collision no longer applies.
+- **Types (`#ddb0ec`, orchid) vs. properties (`#c9b9cb`, mauve-grey):** Both lean violet; differ in saturation and lightness (8.7:1 vs. 8.5:1). Properties were pulled cooler and greyer in v0.1.3 (was `#d8c2d2`) to widen the gap from the variable rose. Constants moved to cornflower (`#8fb0f2`) in v0.1.0, so the former type/constant violet collision no longer applies.
+- **Namespaces (`#c0a6d8`, grey-lilac) vs. types (`#ddb0ec`, orchid):** Adjacent violets split in v0.1.3; the namespace tone is greyer and lower in luminance (7.3:1 vs. 8.7:1). Real-world adjacency is low (namespace/module/package names rarely sit beside a type token on the same line), and classes/types-in-namespace stay orchid.
+- **Properties (`#c9b9cb`, mauve-grey) vs. variables (`#e8c5d6`, dusty rose):** The pair the v0.1.3 property shift targets — separated in both hue (mauve vs. rose) and luminance (8.5:1 vs. 10.1:1) so object keys read distinctly from identifiers.
 - **Regex (`#9ed0c4`, teal-mint) vs. links (`#86c0cc`, teal):** Adjacent teals; real-world adjacency is low (links are markdown/URLs).
 - **Error (`#f48771`) vs. warning (`#cca700`):** Differ in luminance as well as hue. Separable under most CVD types.
 
@@ -659,14 +662,22 @@ The most extensively customized language in the theme (~25 specific rules).
 #### Java
 
 - Source-level default is `syntax.variable`
-- Type annotations use `syntax.function`; storage types and generics use `syntax.keyword`
+- Annotations (`@Override`) and the annotation `@` use `syntax.function` (decorator family, consistent with Python `@decorator`)
+- Storage types, generics, and array types use `syntax.type`
+- The `import`/`package` keywords stay `syntax.keyword`, but the dotted **path** that follows (`storage.modifier.import.java` / `storage.modifier.package.java`, the grammar's `contentName` for the whole `java.util.ArrayList`) uses `syntax.namespace` — a package path is a namespace, consistent with Go package names and PHP `use`/`namespace` paths. (v0.1.3 fixed the prior pink mis-assignment that made import/package lines read heavy.)
 - Method names use `syntax.function`
-- Most structural punctuation (braces, method parens, separators) uses `syntax.function` via a broad Java rule — an intentional departure from the global `syntax.punctuation`
+- Structural punctuation (braces, method parens, separators, dots, angle brackets) uses `syntax.punctuation` — aligned with the global rule (v0.1.3 fixed the prior mis-assignment to `syntax.function`). The old blanket `meta.method.body/-call/.java` rules were removed so method-body contents resolve naturally rather than being over-painted pink.
 
 #### Go
 
 - Operators (`:=`, arithmetic, address) use `syntax.operator` — unified with the global symbolic-operator rule
-- Package names use `syntax.type`
+- Package names use `syntax.namespace`
+
+#### PHP
+
+- Types and type-hints (`int`, `string`, phpdoc types) use `syntax.type` (v0.1.3 — was mis-assigned to `syntax.keyword`)
+- Structural punctuation (braces, parens, semicolons, separators) uses `syntax.punctuation` (v0.1.3 — was mis-assigned to `syntax.keyword`); this is the largest visual fix for PHP
+- `use`/namespace import statements use `syntax.namespace`; class names stay `syntax.type`
 
 #### Markdown
 
@@ -711,13 +722,13 @@ Open each file type in the Extension Development Host (F5) and verify colors mat
 - [ ] TypeScript (`.ts`) — keywords pink, functions rose, types lavender, strings sage
 - [ ] Python (`.py`) — decorators green/rose, `self` lavender, logical operators pink
 - [ ] Rust (`.rs`) — lifetimes lavender, `self` rose-mauve, `&`/`*` pink
-- [ ] Java (`.java`) — annotations lavender, methods rose, all punctuation mauve
+- [ ] Java (`.java`) — annotations rose, methods rose, types lavender, all punctuation mauve
 - [ ] HTML (`.html`) — tags rose-mauve, attributes lavender (italic), values sage
 - [ ] CSS (`.css`) — selectors pink, properties mauve, values lavender, pseudo-classes green
 - [ ] JSON (`.json`) — keys rose-mauve, string values sage, booleans green
 - [ ] Markdown (`.md`) — headings rose-mauve, bold lavender, italic pink, code sage
-- [ ] Go (`.go`) — `:=` lavender, arithmetic pink, package names lavender
-- [ ] PHP (`.php`) — class variables rose-mauve, function calls rose, operators green
+- [ ] Go (`.go`) — `:=` greige (operator), arithmetic pink, package names grey-lilac (namespace)
+- [ ] PHP (`.php`) — class variables rose-mauve, function calls rose, operators green, types lavender, punctuation mauve
 - [ ] C/C++ (`.c`/`.cpp`) — operators pink, POSIX types green
 - [ ] Shell/Bash (`.sh`) — verify no unexpected fallback to plain white
 
@@ -819,6 +830,27 @@ Where applicable, verify in:
 - [ ] Cursor (VS Code fork — should render identically)
 - [ ] Windsurf (VS Code fork — check for any custom overrides)
 
+**Scope portability rule.** Only assign colours to scopes that ship in the
+**upstream `microsoft/vscode` bundled grammars** (the same files every fork —
+VS Code, VSCodium, Cursor, Windsurf — and every Open VSX consumer ship). Verify a
+scope upstream before relying on it; do not derive scopes solely from one editor's
+copy. The v0.1.3 Java/PHP work was verified against the upstream
+`extensions/java/syntaxes/java.tmLanguage.json` and `extensions/php/syntaxes/php.tmLanguage.json`
+(e.g. Java import/package paths are the grammar's `contentName`
+`storage.modifier.import.java` / `storage.modifier.package.java`).
+
+**TextMate ↔ semantic parity.** Each language is themed twice over: by the bundled
+TextMate grammar (no LSP) and by semantic tokens (LSP active, e.g. Red Hat Java).
+Both paths must land on the same colour. VS Code's *standard* semantic-token→scope
+fallback (shared core, identical across forks) covers this automatically when the
+fallback scope is already themed: `namespace → entity.name.namespace` (`#c0a6d8`),
+`class → entity.name.type.class` (`#ddb0ec`), `interface/enum/type → entity.name.type*`
+(`#ddb0ec`), so Java/Go/PHP/TS package and namespace tokens read identically with
+semantic highlighting on or off. Only add an explicit `semanticTokenColors` override
+when the default fallback colour differs from the desired one (the reason the three
+existing overrides — `enumMember`, `variable.constant`, `variable.defaultLibrary` —
+exist); do **not** add redundant overrides that merely restate the fallback.
+
 ---
 
 ## 12. Anti-Patterns
@@ -894,7 +926,8 @@ The current three semantic token rules are minimal. When expanding:
 
 These are identified inconsistencies or refinement candidates:
 
-- No open issues as of v0.1.0. (The earlier `variable.other.constant` vs semantic `variable.constant` mismatch and the C/C++ punctuation-separator inheritance were both resolved in the v0.1.0 palette swap.)
+- No open issues as of v0.1.3. (The earlier `variable.other.constant` vs semantic `variable.constant` mismatch and the C/C++ punctuation-separator inheritance were both resolved in the v0.1.0 palette swap.)
+- **Resolved in v0.1.3:** the "Java/PHP look too pink" reports were traced to TextMate scope mis-assignments — Java structural punctuation and PHP punctuation/types were painted with the keyword/function pinks. Punctuation now resolves to `syntax.punctuation` and types to `syntax.type` in both languages, and the blanket `meta.method.body/-call/.java` pink rules were removed. Separately, a pre-existing drift in `scripts/palette-index.mjs` (CURATED map listed `type #c9b6f2` and a phantom `modifier #d6a0b2`) was reconciled to the shipped palette so `node scripts/palette-index.mjs --check` exits clean.
 
 ### 13.8 Light Theme Strategy
 

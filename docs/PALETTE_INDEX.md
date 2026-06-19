@@ -15,28 +15,29 @@ node scripts/palette-index.mjs
 
 <!-- GENERATED:palette-index START — do not edit by hand; run `node scripts/palette-index.mjs` -->
 
-> **Generated** for Pixel Berry **v0.1.0** by `scripts/palette-index.mjs`.
+> **Generated** for Pixel Berry **v0.1.3** by `scripts/palette-index.mjs`.
 > Do not hand-edit this block. Update colours in the theme JSON (and the CURATED map
 > in the script if a role/token name changes), then rerun the script.
 
-**Totals:** 20 syntax foreground values · 122 workbench values · **140 distinct hex strings** across the whole theme.
+**Totals:** 21 syntax foreground values · 122 workbench values · **141 distinct hex strings** across the whole theme.
 
 ### 1. Syntax roles (`tokenColors` foregrounds)
 
 | Role | Hex | Usages |
 |---|---|---:|
-| keyword | `#ff7ba8` | 34 |
-| function | `#ffb0cf` | 26 |
-| type | `#ddb0ec` | 29 |
+| keyword | `#ff7ba8` | 28 |
+| function | `#ffb0cf` | 24 |
+| type | `#ddb0ec` | 26 |
+| namespace | `#c0a6d8` | 7 |
 | constant | `#8fb0f2` | 29 |
 | number | `#e8c98a` | 5 |
 | string | `#a8d8a8` | 15 |
 | regexp | `#9ed0c4` | 3 |
 | link | `#86c0cc` | 3 |
-| variable | `#e8c5d6` | 27 |
-| property | `#d8c2d2` | 10 |
+| variable | `#e8c5d6` | 26 |
+| property | `#c9b9cb` | 10 |
 | operator | `#aeb0a8` | 21 |
-| punctuation | `#978d94` | 20 |
+| punctuation | `#978d94` | 22 |
 | comment | `#a8919e` | 5 |
 | deprecated | `#9e8a96` | 1 |
 | error | `#f06a6a` | 5 |

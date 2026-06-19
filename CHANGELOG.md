@@ -2,6 +2,53 @@
 
 All notable changes to the Pixel Berry theme will be documented in this file.
 
+## [0.1.3] - 2026-06-19
+
+Syntax-palette QA pass for Java and PHP, a calmer property tone, and a new namespace
+role. Most of the "Java/PHP looks too pink" problem was a TextMate scope-assignment
+bug rather than a colour choice. **UI/chrome colours are unchanged.** Repo-consistent
+release (version bump, on-disk snapshots, and doc regeneration)
+
+### Added
+- **Namespace role `#c0a6d8`** (grey-lilac), split from the type orchid `#ddb0ec` for
+  module/package/namespace names — generic namespaces, JS/TS modules, Go package
+  names, PHP `use` and `namespace` paths, and Java `import`/`package` paths. Classes
+  and types-in-a-namespace stay `#ddb0ec`. Contrast 7.3:1 (AAA on the editor background).
+
+### Changed
+- **Property** `#d8c2d2` → `#c9b9cb` (cooler mauve-grey) so object/JSON keys read
+  distinctly from the variable rose `#e8c5d6`. Contrast 8.5:1 (AAA).
+- **PHP** — type-hints recoloured from keyword pink to type lilac `#ddb0ec`;
+  structural punctuation (parens, braces, semicolons, delimiters) from pink to
+  punctuation grey `#978d94`. This is the largest visual change for PHP.
+- **Java** — structural punctuation (braces, parens, dots, angle brackets) moved to
+  punctuation grey `#978d94`; storage types and generics moved to type lilac
+  `#ddb0ec`. Annotations, method names, and the `import`/`package` keywords stay
+  rose/pink.
+
+### Fixed
+- Java `import`/`package` lines no longer read as a heavy block of pink: the dotted
+  path now uses the namespace tone instead of the keyword pink it was inheriting.
+- Test-fixture annotations corrected to the shipped semantic palette
+  (`#b0a8ee` → `#8fb0f2`, "periwinkle" → "cornflower"), and the
+  `test-fixtures/README.md` colour reference (stale since the v0.1.0 redesign)
+  brought fully up to the current palette, including the new namespace role.
+- PHP `namespace Foo\Bar;` declarations now use the namespace tone like `use`
+  statements (was type orchid via `entity.name.type.namespace.php`).
+
+### Removed
+- Blanket Java rules (`meta.method.java`, `meta.method.body.java`,
+  `meta.method-call.java`) that over-painted whole method regions rose; their
+  contents now resolve per token.
+- Dead non-upstream Java scopes carried from an old grammar
+  (`import.storage.java`, `token.package`, `token.package.keyword`,
+  `token.storage.type.java`) — the bundled grammars don't emit them, and they
+  still encoded the old keyword-pink import/package colouring.
+
+### Internal
+- Reconciled stale entries in the palette-index generator (`scripts/palette-index.mjs`)
+  so `node scripts/palette-index.mjs --check` exits clean.
+
 ## [0.1.2] - 2026-06-07
 
 ### Added
